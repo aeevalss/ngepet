@@ -1,0 +1,1093 @@
+/* Обнуление */
+::-webkit-scrollbar {
+  display: none;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+html,
+body {
+  height: 100%;
+  line-height: 1;
+  color: #000;
+  font-family: "Mulish", sans-serif;
+  font-size: 16px;
+}
+
+// ===Обертка страницы=================================================
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+  background-color: #012651;
+
+  &__body {
+    padding: 0 24px;
+    max-width: 1200px;
+    margin: 0px auto;
+    box-sizing: content-box;
+  }
+}
+
+// === Header=================================================
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 125%;
+  color: #fea05d;
+}
+
+.header__logo:hover {
+  cursor: pointer;
+}
+
+.header {
+  min-height: 100px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  &__nav {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.nav {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px 120px 0px 327px;
+
+    @media screen and (max-width: 1240px) {
+      margin: 0px 90px 0px 200px;
+    }
+
+    @media screen and (max-width: 979px) {
+      margin: 0px 60px 0px 80px;
+    }
+
+    @media screen and (max-width: 767px) {}
+  }
+
+  &__link {
+    color: #eff3ff;
+    line-height: 150%;
+    font-weight: 500;
+  }
+
+  &__enter {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+}
+
+// СТИЛЬ ССЫЛОК В МЕНЮ
+.underline-one {
+  /* Цвет обычной ссылки */
+  position: relative;
+  cursor: pointer;
+  text-decoration: none;
+  /* Убираем подчеркивание */
+}
+
+.underline-one:after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  /* Высота линии */
+  background-color: white;
+  /* Цвет подчеркивания при исчезании линии*/
+  transition: width 0.5s;
+  /* Время эффекта */
+}
+
+.underline-one:hover:after {
+  content: "";
+  width: 100%;
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  height: 2px;
+  /* Высота линии */
+  background-color: white;
+  /* Цвет подчеркивания при появлении линии*/
+  transition: width 0.5s;
+  /* Время эффекта */
+}
+
+.nav__item:not(:last-child) {
+  margin: 0px 40px 0px 0px;
+
+  @media screen and (max-width: 1240px) {
+    margin: 0px 30px 0px 0px;
+  }
+
+  @media screen and (max-width: 979px) {
+    margin: 0px 20px 0px 0px;
+  }
+}
+
+.enter {
+  &__btn {
+    background: #ffa161;
+    // border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 25px;
+    letter-spacing: 0.011em;
+    font-size: 16px;
+    color: #933a14;
+    line-height: 150%;
+    min-height: 48px;
+    cursor: pointer;
+    transition: all 400ms ease;
+  }
+
+  &__btn:hover {
+    background: rgba(0, 0, 0, 0);
+    color: #ffa161;
+    box-shadow: inset 0 0 0 3px #ffa161;
+    font-weight: bold;
+  }
+
+  &__login {
+    margin: 0px 40px 0px 0px;
+
+    @media screen and (max-width: 1240px) {
+      margin: 0px 30px 0px 0px;
+    }
+
+    @media screen and (max-width: 979px) {
+      margin: 0px 20px 0px 0px;
+    }
+  }
+}
+
+// АДАПТИВНЫЕ ССЫЛКИ В МЕНЮ
+.header-media {
+  display: none;
+}
+
+.nav__list-mda {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.nav__item-mda:not(:last-child) {
+  padding-right: 50px;
+
+  @media screen and (max-width: 760px) {
+    padding-right: 1px;
+  }
+}
+
+@media screen and (max-width: 616px) {
+  .header-media {
+    display: block;
+    margin-top: -20px;
+    margin-bottom: 80px;
+  }
+
+  .nav__list {
+    display: none;
+  }
+
+  .header {
+    justify-content: space-between;
+  }
+}
+
+// ===Вторая часть сайта=================================================
+.page2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30px 0px 0px 0px;
+  max-width: 1200px;
+  min-height: 576px;
+
+  @media screen and (max-width: 1240px) {
+    justify-content: center;
+    margin: 30px 0px 0px 0px;
+  }
+
+  &__col {
+    max-width: 612px;
+
+    @media screen and (max-width: 1240px) {
+      text-align: center;
+    }
+  }
+
+  &__main {
+    padding-bottom: 48px;
+
+    @media screen and (max-width: 480px) {
+      padding-bottom: 32px;
+    }
+  }
+
+  &__title {
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    font-size: 60px;
+    line-height: 133%;
+    text-transform: capitalize;
+    letter-spacing: -0.5px;
+    padding-bottom: 24px;
+    color: #eff3ff;
+
+    @media screen and (max-width: 768px) {
+      font-size: 40px;
+      letter-spacing: 0.011em;
+    }
+
+    @media screen and (max-width: 480px) {
+      font-size: 24px;
+    }
+  }
+
+  span {
+    color: #fea05d;
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 150%;
+    color: #eff3ff;
+    width: 80%;
+
+    @media screen and (max-width: 1240px) {
+      width: 100%;
+    }
+  }
+
+  &__btn {
+    padding: 5px 25px;
+    min-height: 48px;
+    border-radius: 6px;
+    background-color: inherit;
+    border: 1px solid #eff3ff;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0.011em;
+    color: #eff3ff;
+    transition: all 500ms ease;
+    cursor: pointer;
+  }
+
+  &__btn:not(:last-child) {
+    margin-right: 20px;
+
+    @media screen and(max-width: 540px) {
+      margin-right: 5px;
+    }
+
+    @media screen and (max-width: 336px) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__btn:hover {
+    background-color: #ffa161;
+    color: #933a14;
+    border: 1px solid #ffa161;
+  }
+
+  &__col2 {
+    max-width: 576px;
+  }
+
+  &__phone {
+    width: 100%;
+    height: 100%;
+
+    @media screen and(max-width: 768px) {
+      width: 90%;
+    }
+  }
+}
+
+.short-title {
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+  color: #fea05d;
+  padding-bottom: 16px;
+}
+
+// ===Третья часть сайта=================================================
+.page3 {
+  margin: 60px 0px 0px 0px;
+
+  // SLIDER
+  @media screen and(max-width: 980px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__header {
+    max-width: 430px;
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 150%;
+    letter-spacing: -0.5px;
+    color: #eff3ff;
+
+    @media screen and (max-width: 768px) {
+      font-size: 40px;
+    }
+
+    @media screen and (max-width: 480px) {
+      font-size: 24px;
+    }
+  }
+
+  &__text {
+    max-width: 382px;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 1.1px;
+    color: #eff3ff;
+    opacity: 0.7;
+    margin-bottom: 48px;
+  }
+
+  &__arrow {
+    margin-top: auto;
+  }
+
+  &__cols2 {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__col {
+    background-color: rgba(61, 137, 225, 0.16);
+    height: 348px;
+    width: 317px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+  }
+}
+
+// SLIDER
+@media screen and (max-width: 980px) {
+  .col {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .col_ {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 980px) {
+  .slider {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 980px) {
+  .slider-rev {
+    display: flex;
+  }
+}
+
+.col {
+  &__inner {
+    width: 86%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 0px;
+  }
+
+  &__title {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 1.1px;
+    color: #eff3ff;
+  }
+
+  &__text {
+    padding-top: 8px;
+    font-size: 14px;
+    line-height: 170%;
+    text-align: center;
+    color: #eff3ff;
+    letter-spacing: 0.15px;
+    opacity: 0.7;
+  }
+
+  &__btn {
+    border: 1px solid #eff3ff;
+    background-color: inherit;
+    color: #eff3ff;
+    min-height: 48px;
+    padding: 5px 25px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    border-radius: 6px;
+    transition: all 500ms ease;
+  }
+
+  &__btn:hover {
+    background-color: #ffa161;
+    color: #933a14;
+    border: 1px solid #ffa161;
+    cursor: pointer;
+  }
+}
+
+.logo {
+  &__ellipse {
+    width: 72px;
+    height: 72px;
+    background: #11437c;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+// ===Четвертая часть сайта=================================================
+.page4 {
+  margin: 124px 0px 0px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__head {
+    max-width: 421px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+  }
+
+  &__heading {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  &__programs {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 32px;
+  }
+}
+
+.heading {
+  &__short-title {
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 1.1px;
+    color: #ffa161;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 125%;
+    color: #eff3ff;
+
+    @media screen and (max-width: 768px) {
+      font-size: 40px;
+    }
+
+    @media screen and (max-width: 480px) {
+      font-size: 24px;
+    }
+  }
+}
+
+.for-title {
+  color: #ffa161;
+}
+
+.head {
+  &__choose {
+    font-size: 14px;
+    line-height: 128%;
+    color: #eff3ff;
+    opacity: 0.6;
+    margin-bottom: 24px;
+
+    @media screen and (max-width: 768px) {
+      font-size: 16px;
+      margin-bottom: 32px;
+    }
+  }
+
+  &__switcher-program {
+    display: flex;
+    margin-bottom: 15px;
+  }
+
+  &__discount {
+    display: flex;
+  }
+}
+
+.switcher-program {
+  &__program {
+    font-size: 14px;
+    line-height: 128%;
+    color: #eff3ff;
+  }
+
+  &__switcher {
+    padding: 0px 24px;
+  }
+}
+
+.discount {
+  &__text {
+    padding: 0px 9px 0px 0px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.7px;
+    color: #ffa161;
+    text-transform: capitalize;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .programs__program {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .program_ {
+    display: block;
+  }
+}
+
+.programs {
+  &__program {
+    width: 282px;
+    height: 604px;
+    border: 1px solid #eff3ff;
+    border-radius: 10px;
+  }
+
+  &__program:hover {
+    background: #0b3668;
+  }
+
+  &__program:hover .content__btn {
+    color: #933a14;
+    background: #ffa161;
+    border: 1px solid #ffa161;
+    cursor: pointer;
+  }
+}
+
+.program {
+  &__upper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 202px;
+    border-bottom: 1px solid #eff3ff;
+  }
+}
+
+.upper {
+  &__inner {
+    width: 80%;
+  }
+
+  &__price {
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 125%;
+    color: #ffffff;
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 24px;
+    color: #eff3ff;
+    opacity: 0.6;
+  }
+}
+
+.top {
+  &__text {
+    padding-bottom: 16px;
+  }
+
+  &__lvl {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #ffffff;
+    padding-bottom: 24px;
+  }
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 402px;
+  width: 100%;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 80%;
+    height: 85%;
+  }
+
+  &__rows {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__row {
+    display: flex;
+  }
+
+  &__row:not(:first-child) {
+    padding: 33px 0px 0px 0px;
+  }
+
+  &__btn {
+    min-height: 50px;
+    padding: 5px 63px;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    background: inherit;
+    border: 1px solid #eff3ff;
+    color: #eff3ff;
+    transition: all 500ms ease;
+  }
+}
+
+.row {
+  &__circle {
+    width: 24px;
+    height: 24px;
+    background-color: #ffa161;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px 24px 0px 0px;
+  }
+
+  &__info {
+    font-size: 16px;
+    line-height: 125%;
+    color: #ffffff;
+  }
+}
+
+.circle-cross {
+  background-color: #859ab3;
+}
+
+.info-cross {
+  color: #eff3ff;
+  opacity: 0.7;
+}
+
+@media screen and (max-width: 980px) {
+  .reviews {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+// ===Пятая часть сайта=================================================
+.reviews {
+  margin-top: 140px;
+  display: flex;
+  min-height: 203px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  &__main {
+    max-width: 243px;
+
+    @media screen and(max-width:980px) {
+      max-width: 100%;
+    }
+  }
+
+  &__short-title {
+    padding-bottom: 16px;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 1.1px;
+    text-transform: uppercase;
+    color: #ffa161;
+  }
+
+  &__title {
+    font-family: Montserrat;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 150%;
+    letter-spacing: -0.5px;
+    text-transform: capitalize;
+    color: #eff3ff;
+
+    @media screen and (max-width: 768px) {
+      font-size: 40px;
+    }
+
+    @media screen and (max-width: 480px) {
+      font-size: 24px;
+    }
+  }
+}
+
+.reviews__slide {
+  max-width: 588px;
+
+  @media screen and(max-width:980px) {
+    margin-top: 32px;
+  }
+}
+
+.slider-head {
+  font-weight: bold;
+  padding-bottom: 10px;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 1.1px;
+  color: #ffa161;
+}
+
+.slider-job {
+  padding-bottom: 24px;
+  font-size: 16px;
+  line-height: 150%;
+  color: #eff3ff;
+}
+
+.slider-text {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 1.1px;
+  color: #eff3ff;
+  opacity: 0.7;
+}
+
+// ===Шестая часть сайта=================================================
+.contact {
+  background-color: #012d5e;
+  margin-top: 100px;
+  width: 100%;
+  min-height: 370px;
+  padding: 35px 24px;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
+
+  &__short-title {
+    text-transform: uppercase;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 1.1px;
+    color: #ffa161;
+  }
+
+  &__title {
+    text-align: center;
+    text-transform: capitalize;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 150%;
+    letter-spacing: -0.5px;
+    color: #eff3ff;
+    padding-bottom: 16px;
+
+    @media screen and (max-width: 768px) {
+      font-size: 40px;
+    }
+
+    @media screen and (max-width: 480px) {
+      font-size: 24px;
+    }
+  }
+
+  &__add {
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 1.1px;
+    color: #eff3ff;
+    opacity: 0.7;
+    margin-bottom: 24px;
+
+    @media screen and (max-width: 980px) {
+      margin-bottom: 32px;
+    }
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__input {
+    font-family: "Mulish", sans-serif;
+    text-align: center;
+    padding: 20px 100px;
+    border-radius: 6px;
+    background: rgba(218, 235, 255, 0.26);
+    font-size: 16px;
+    line-height: 150%;
+    color: #eff3ff;
+    opacity: 0.7;
+    margin-bottom: 24px;
+
+    @media screen and (max-width: 980px) {
+      padding: 20px 70px;
+    }
+
+    @media screen and (max-width: 768px) {
+      padding: 12px 69px;
+    }
+
+    @media screen and (max-width: 540px) {
+      padding: 12px 49px;
+    }
+  }
+
+  &__btn {
+    padding: 12px 25px;
+    width: 126px;
+    height: 48px;
+    background-color: #ffa161;
+    border-radius: 6px;
+    color: #933a14;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0.011em;
+    transition: all 400ms ease;
+  }
+
+  &__btn:hover {
+    background: rgba(0, 0, 0, 0);
+    color: #ffa161;
+    box-shadow: inset 0 0 0 3px #ffa161;
+    font-weight: bold;
+  }
+}
+
+// ===Седьмая часть сайта=================================================
+.soc:not(:last-child) {
+  margin-right: 21.33px;
+}
+
+.soc:hover {
+  cursor: pointer;
+}
+
+.footer {
+  min-height: 340px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 50px;
+
+  @media screen and (max-width: 575px) {}
+
+  &__inner1 {
+    padding: 0px 24px 0px 24px;
+    margin-bottom: 40px;
+    max-width: 1200px;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__col1 {
+    padding-right: 132px;
+    width: 41%;
+    padding-bottom: 30px;
+
+    @media screen and (max-width: 980px) {
+      width: 100%;
+      padding: 0px 0px 40px 0px;
+    }
+  }
+
+  &__logo {
+    padding-bottom: 16px; //24
+    cursor: pointer;
+
+    @media screen and (max-width: 980px) {
+      padding-bottom: 24px;
+    }
+  }
+
+  &__descript {
+    font-size: 16px;
+    line-height: 200%;
+    color: #eff3ff;
+    padding-bottom: 32px; //16
+
+    @media screen and(max-width: 960px) {
+      padding-bottom: 16px;
+    }
+  }
+
+  &__social {
+    display: flex;
+  }
+
+  &__list-wrapper {
+    padding-right: 90px;
+
+    @media screen and (max-width: 676px) {
+      padding-bottom: 24px;
+      padding-right: 64px;
+    }
+
+    @media screen and (max-width: 350px) {
+      padding-right: 30px;
+    }
+  }
+
+  &__list-wrapper2 {
+    padding-right: 90px;
+
+    @media screen and (max-width: 676px) {
+      padding-bottom: 24px;
+      padding-right: 64px;
+    }
+  }
+
+  &__short-head {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 100%;
+    color: #eff3ff;
+    padding-bottom: 24px;
+  }
+
+  &__list {
+    li:not(:last-child) {
+      padding-bottom: 20px;
+    }
+  }
+
+  &__link {
+    font-size: 15px;
+    line-height: 128%;
+    color: #eff3ff;
+    opacity: 0.8;
+  }
+
+  &__list1 {
+    margin-bottom: 24px;
+  }
+
+  &__link-of {
+    font-size: 16px;
+    color: #eff3ff;
+    opacity: 0.8;
+    line-height: 160%;
+  }
+
+  &__inner2 {
+    width: 100%;
+    border-top: 1px solid rgba(36, 77, 77, 0.1);
+    height: 67px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
